@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C58C20A25CB01FB00D9268A /* DemoCodable+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58C20925CB01FB00D9268A /* DemoCodable+API.swift */; };
 		2C97575A25C889B00068AFEC /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97575925C889B00068AFEC /* CupcakeCornerApp.swift */; };
 		2C97575C25C889B00068AFEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97575B25C889B00068AFEC /* ContentView.swift */; };
 		2C97575E25C889B00068AFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C97575D25C889B00068AFEC /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C58C20925CB01FB00D9268A /* DemoCodable+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoCodable+API.swift"; sourceTree = "<group>"; };
 		2C97575625C889B00068AFEC /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C97575925C889B00068AFEC /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		2C97575B25C889B00068AFEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				2C97575925C889B00068AFEC /* CupcakeCornerApp.swift */,
 				2C97575B25C889B00068AFEC /* ContentView.swift */,
+				2C58C20925CB01FB00D9268A /* DemoCodable+API.swift */,
 				2C97575D25C889B00068AFEC /* Assets.xcassets */,
 				2C97576225C889B00068AFEC /* Info.plist */,
 				2C97575F25C889B00068AFEC /* Preview Content */,
@@ -261,6 +264,7 @@
 			files = (
 				2C97575C25C889B00068AFEC /* ContentView.swift in Sources */,
 				2C97575A25C889B00068AFEC /* CupcakeCornerApp.swift in Sources */,
+				2C58C20A25CB01FB00D9268A /* DemoCodable+API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
