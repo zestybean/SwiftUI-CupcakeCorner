@@ -9,9 +9,10 @@ import SwiftUI
 
 struct CheckoutView: View {
     @ObservedObject var order: Order
-    
-    @State private var confirmationMessage = ""
-    @State private var showingConfirmation = false
+
+    @State private var alertTitle = ""
+    @State private var returnMessage = ""
+    @State private var showAlert = false
     
     var body: some View {
         GeometryReader { geo in
@@ -34,9 +35,11 @@ struct CheckoutView: View {
             }
         }
         .navigationTitle("Checkout")
-        .alert(isPresented: $showingConfirmation, content: {
-            Alert(title: Text("Thank you!"), message: Text(confirmationMessage), dismissButton: .default(Text("Ok")))
+        .alert(isPresented: $showAlert, content: {
+            Alert(title: Text(alertTitle), message: Text(returnMessage), dismissButton: .default(Text("Ok")))
         })
+        
+        
     }
     
     func placeOrder() {
@@ -58,13 +61,17 @@ struct CheckoutView: View {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
+                self.alertTitle = "Oops!"
+                self.returnMessage = error?.localizedDescription ?? "Unknown"
                 print("No data in response: \(error?.localizedDescription ?? "Unknown error").")
+                self.showAlert = true
                 return
             }
             
             if let decodedOrder = try? JSONDecoder().decode(Order.self, from: data) {
-                self.confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes are on their way!"
-                self.showingConfirmation = true
+                self.alertTitle = "Thank you!🥰"
+                self.returnMessage = "Your order for \(decodedOrder.quantity) \(Order.types[decodedOrder.type].lowercased()) cupcakes are on their way!"
+                self.showAlert = true
             } else {
                 print("Invaliid response from the server")
             }
